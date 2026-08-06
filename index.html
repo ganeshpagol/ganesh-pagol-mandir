@@ -1,255 +1,86 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>শ্রী শ্রী মহামানব গণেশ পাগল মন্দির | টুনিঘাটা, হাবড়া</title>
-<meta name="description" content="শ্রী শ্রী মহামানব গণেশ পাগল মন্দির, টুনিঘাটা, হাবড়া, উত্তর ২৪ পরগণা — স্থাপিত ২০১৪। নিত্য পূজা সূচী, বাৎসরিক উৎসব ও মন্দিরের ইতিহাস।">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>শ্রী শ্রী মহামানব গণেশ পাগল মন্দির | টুনিঘাটা, হাবড়া</title>
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com"></script>
-
-<!-- AOS -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          cream: '#FFFDF7',
-          maroon: '#800000',
-          'maroon-deep': '#5A0000',
-          saffron: '#FF7700',
-          'saffron-hover': '#E66A00',
-          gold: '#D4AF37',
-          charcoal: '#222222',
-          muted: '#555555'
-        },
-        fontFamily: {
-          sans: ['"Hind Siliguri"', 'sans-serif'],
-        },
-      }
-    }
-  }
-</script>
-
-<style>
-  :root{
-    --cream: #FFFDF7;
-    --maroon: #800000;
-    --maroon-deep: #5A0000;
-    --saffron: #FF7700;
-    --gold: #D4AF37;
-    --charcoal: #222222;
-  }
-  *{ scroll-behavior: smooth; }
-  body{
-    background: var(--cream);
-    font-family: 'Hind Siliguri', sans-serif;
-    color: var(--charcoal);
-    overflow-x: hidden;
-  }
-
-  /* ---------- Scrollbar ---------- */
-  ::-webkit-scrollbar{ width: 10px; }
-  ::-webkit-scrollbar-track{ background: var(--cream); }
-  ::-webkit-scrollbar-thumb{ background: var(--gold); border-radius: 10px; }
-
-  /* ---------- Glassmorphism Navbar ---------- */
-  .glass-nav{
-    background: rgba(255, 253, 247, 0.85);
-    backdrop-filter: blur(16px) saturate(160%);
-    -webkit-backdrop-filter: blur(16px) saturate(160%);
-    border-bottom: 2px solid rgba(212, 175, 55, 0.4);
-    transition: all 0.4s ease;
-  }
-  .glass-nav.scrolled{
-    background: rgba(255, 253, 247, 0.98);
-    box-shadow: 0 4px 25px rgba(128, 0, 0, 0.1);
-  }
-
-  /* ---------- Mandala rotating motif ---------- */
-  .mandala{
-    position: absolute;
-    opacity: 0.06;
-    animation: spin 90s linear infinite;
-    pointer-events: none;
-  }
-  @keyframes spin{
-    from{ transform: rotate(0deg); }
-    to{ transform: rotate(360deg); }
-  }
-
-  /* ---------- Section divider ---------- */
-  .divider{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap: 14px;
-    margin: 0 auto;
-  }
-  .divider .line{
-    height: 1.5px;
-    width: 80px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  }
-
-  /* ---------- Hero ---------- */
-  .hero-bg{
-    background-image:
-      linear-gradient(180deg, rgba(60, 0, 0, 0.65) 0%, rgba(90, 0, 0, 0.82) 60%, rgba(255, 253, 247, 1) 100%),
-      url('photo1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-color: var(--maroon-deep);
-  }
-
-  /* ---------- Cards ---------- */
-  .card-hover{ transition: transform 0.45s cubic-bezier(0.22,1,0.36,1), box-shadow 0.45s ease; }
-  .card-hover:hover{ transform: translateY(-8px); box-shadow: 0 20px 40px rgba(128,0,0,0.12); }
-
-  .gallery-item{ overflow:hidden; border-radius: 1.25rem; cursor: zoom-in; position:relative; }
-  .gallery-item img{ transition: transform 0.6s cubic-bezier(0.22,1,0.36,1); }
-  .gallery-item:hover img{ transform: scale(1.08); }
-
-  /* ---------- Buttons ---------- */
-  .btn-primary{
-    background: linear-gradient(135deg, #FF7700, #FF5500);
-    color: #fff;
-    box-shadow: 0 8px 25px rgba(255,119,0,0.35);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .btn-primary:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(255,119,0,0.5);
-  }
-  .btn-secondary{
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    border: 1.5px solid var(--gold);
-    backdrop-filter: blur(4px);
-    transition: all 0.3s ease;
-  }
-  .btn-secondary:hover{
-    background: var(--gold);
-    color: #000;
-    transform: translateY(-3px);
-  }
-
-  /* ---------- Lightbox ---------- */
-  #lightbox{
-    position: fixed; inset:0; z-index:100;
-    background: rgba(15,0,0,0.92);
-    display:flex; align-items:center; justify-content:center;
-    opacity:0; pointer-events:none;
-    transition: opacity 0.35s ease;
-  }
-  #lightbox.active{ opacity:1; pointer-events:auto; }
-  #lightbox img{
-    max-width: 90vw; max-height: 85vh;
-    border-radius: 0.75rem;
-    box-shadow: 0 0 50px rgba(212,175,55,0.3);
-    transform: scale(0.92);
-    transition: transform 0.35s ease;
-  }
-  #lightbox.active img{ transform: scale(1); }
-
-  /* ---------- Schedule table ---------- */
-  .schedule-row{ transition: background 0.3s ease, transform 0.3s ease; }
-  .schedule-row:hover{ background: rgba(255,119,0,0.06); transform: translateX(4px); }
-
-  /* ---------- Watermark ---------- */
-  .om-watermark{
-    font-size: 24rem;
-    line-height: 1;
-    color: var(--gold);
-    opacity: 0.05;
-    position: absolute;
-    pointer-events: none;
-    user-select: none;
-  }
-
-  .img-fallback{ background: linear-gradient(135deg, var(--maroon), var(--maroon-deep)); }
-  #mobileMenu{ max-height:0; overflow:hidden; transition: max-height 0.4s ease; }
-  #mobileMenu.open{ max-height: 400px; }
-</style>
+  <!-- Fonts & External Libraries -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS & AOS Animation CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="antialiased">
 
-<!-- ===================== NAVBAR ===================== -->
-<nav id="navbar" class="glass-nav fixed top-0 left-0 w-full z-50">
+<!-- NAVBAR -->
+<nav class="glass-nav fixed top-0 left-0 w-full z-50" id="navbar">
   <div class="max-w-7xl mx-auto px-5 md:px-8 py-3.5 flex items-center justify-between">
     <a href="#top" class="flex items-center gap-2.5">
-      <span class="text-2xl">🛕</span>
-      <span class="text-lg md:text-xl font-bold tracking-wide" style="color:var(--maroon)">মহামানব গণেশ পাগল মন্দির</span>
+      <span class="text-2xl font-bold text-saffron">ॐ</span>
+      <span class="text-lg md:text-xl font-bold tracking-wide text-maroon">মহামানব গণেশ পাগল মন্দির</span>
     </a>
 
-    <div class="hidden md:flex items-center gap-7 text-[16px] font-semibold" style="color:var(--charcoal)">
-      <a href="#about" class="hover:text-[var(--saffron)] transition-colors">আলোকপাত</a>
-      <a href="#event" class="hover:text-[var(--saffron)] transition-colors">মহোৎসব</a>
-      <a href="#schedule" class="hover:text-[var(--saffron)] transition-colors">সেবা সময়সূচী</a>
-      <a href="#gallery" class="hover:text-[var(--saffron)] transition-colors">গ্যালারি</a>
-      <a href="#location" class="hover:text-[var(--saffron)] transition-colors">অবস্থান</a>
-      <span class="px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider" style="background:linear-gradient(135deg, var(--saffron), #FF5500); color:#fff;">২৪ ঘণ্টা খোলা</span>
+    <div class="hidden md:flex items-center gap-7 text-[16px] font-semibold text-charcoal">
+      <a href="#about" class="hover:text-saffron transition-colors">আলোকপাত</a>
+      <a href="#event" class="hover:text-saffron transition-colors">মহোৎসব</a>
+      <a href="#schedule" class="hover:text-saffron transition-colors">সেবা সময়সূচী</a>
+      <a href="#gallery" class="hover:text-saffron transition-colors">গ্যালারি</a>
+      <a href="#location" class="hover:text-saffron transition-colors">অবস্থান</a>
+      <span class="px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-saffron-gradient text-white">২৪ ঘণ্টা খোলা</span>
     </div>
 
-    <button id="menuBtn" class="md:hidden text-2xl" style="color:var(--maroon)" aria-label="মেনু খুলুন">☰</button>
+    <button id="menuBtn" class="md:hidden text-2xl text-maroon" aria-label="মেনু খুলুন">☰</button>
   </div>
 
-  <div id="mobileMenu" class="md:hidden px-5 pb-4 flex flex-col gap-3.5 text-[16px] font-semibold" style="color:var(--charcoal)">
+  <div id="mobileMenu" class="md:hidden px-5 pb-4 flex flex-col gap-3.5 text-[16px] font-semibold text-charcoal">
     <a href="#about" class="menu-link">আলোকপাত</a>
     <a href="#event" class="menu-link">মহোৎসব</a>
     <a href="#schedule" class="menu-link">সেবা সময়সূচী</a>
     <a href="#gallery" class="menu-link">গ্যালারি</a>
     <a href="#location" class="menu-link">অবস্থান</a>
-    <span class="w-fit px-4 py-1.5 rounded-full text-xs font-bold uppercase" style="background:var(--saffron); color:#fff;">২৪ ঘণ্টা খোলা</span>
+    <span class="w-fit px-4 py-1.5 rounded-full text-xs font-bold uppercase bg-saffron text-white">২৪ ঘণ্টা খোলা</span>
   </div>
 </nav>
 
-<!-- ===================== HERO ===================== -->
+<!-- HERO -->
 <header id="top" class="hero-bg relative min-h-[92vh] flex items-center justify-center text-center px-5">
-  <div class="relative z-10 max-w-3xl mx-auto pt-20" data-aos="fade-up" data-aos-duration="900">
-    <p class="tracking-[0.3em] text-sm md:text-base font-bold mb-3 uppercase" style="color:var(--gold)">॥ শ্রী শ্রী ॥</p>
+  <div class="relative z-10 max-w-3xl mx-auto pt-20" data-aos="zoom-in" data-aos-duration="1000">
+    <p class="tracking-[0.3em] text-sm md:text-base font-bold mb-3 uppercase text-gold">॥ শ্রী শ্রী ॥</p>
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-white drop-shadow-md">
       মহামানব গণেশ পাগল মন্দির
     </h1>
     <p class="mt-5 text-base md:text-xl text-amber-100 font-medium">
-      টুনিঘাটা, হাবড়া, উত্তর ২৪ পরগণা &nbsp;|&nbsp; স্থাপিত: ২০১৪
+      টুনিঘাটা, হাবড়া, উত্তর ২৪ পরগণা | স্থাপিত: ২০১৪
     </p>
 
     <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="https://maps.app.goo.gl/NneSPXxFCfhu4Kgs8" target="_blank" rel="noopener"
-         class="btn-primary px-8 py-3.5 rounded-full font-bold text-[16px]">
-        🗺️ গুগল ম্যাপে লোকেশন
+      <a href="#location" class="btn-primary px-8 py-3.5 rounded-full font-bold text-[16px]">
+        📍 মন্দিরের অবস্থান
       </a>
-      <a href="#schedule"
-         class="btn-secondary px-8 py-3.5 rounded-full font-bold text-[16px]">
+      <a href="#schedule" class="btn-secondary px-8 py-3.5 rounded-full font-bold text-[16px]">
         ⏰ নিত্য সেবা সময়সূচী
       </a>
     </div>
   </div>
-
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-amber-300 text-3xl animate-bounce">⌄</div>
 </header>
 
-<!-- ===================== ABOUT ===================== -->
+<!-- ABOUT -->
 <section id="about" class="relative py-20 px-5 overflow-hidden">
-  <span class="om-watermark -left-10 top-0 select-none">ॐ</span>
-
   <div class="max-w-4xl mx-auto text-center relative">
-    <div data-aos="fade-up">
-      <h2 class="text-3xl md:text-4xl font-bold" style="color:var(--maroon)">🌸 পরম সাধক শ্রী শ্রী গণেশ পাগল</h2>
-      <div class="divider mt-4 mb-8"><span class="line"></span><span style="color:var(--gold)">✦</span><span class="line"></span></div>
+    <div data-aos="fade-up" data-aos-duration="800">
+      <h2 class="text-3xl md:text-4xl font-bold text-maroon">🌸 পরম সাধক শ্রী শ্রী গণেশ পাগল</h2>
+      <div class="divider mt-4 mb-8"><span class="line"></span><span class="text-gold">✦</span><span class="line"></span></div>
     </div>
-
-    <p data-aos="fade-up" data-aos-delay="150" class="text-lg md:text-xl leading-[2] font-normal" style="color:var(--charcoal)">
+    <p class="text-lg md:text-xl leading-[2] font-normal text-charcoal" data-aos="fade-up" data-aos-delay="200">
       শ্রী শ্রী গণেশ পাগল (১৩ই জ্যৈষ্ঠ, ১৮৪৮ - ১৯২৮) ছিলেন একজন পরম আধ্যাত্মিক সাধক ও লোককল্যাণমুখী মহাপুরুষ।
       বাংলাদেশের গোপালগঞ্জ জেলার কোটালীপাড়া উপজেলার পোলসাইর গ্রামে তিনি জন্মগ্রহণ করেন। তাঁর অকৃত্রিম মানবপ্রেম
       এবং ধ্যানের লীলাখেলায় অগণিত ভক্ত হৃদয়ে তিনি অমর হয়ে আছেন।
@@ -257,164 +88,109 @@
   </div>
 </section>
 
-<!-- ===================== ANNUAL EVENT ===================== -->
-<section id="event" class="relative py-20 px-5" style="background: linear-gradient(180deg, rgba(212,175,55,0.08), transparent);">
+<!-- ANNUAL EVENT -->
+<section id="event" class="relative py-20 px-5 bg-event-gradient">
   <div class="max-w-5xl mx-auto grid md:grid-cols-5 gap-10 items-center">
-    <div class="md:col-span-2 flex justify-center" data-aos="zoom-in">
-      <div class="w-full max-w-xs aspect-square rounded-3xl card-hover flex items-center justify-center text-7xl"
-           style="background: linear-gradient(135deg, var(--saffron), var(--maroon)); box-shadow:0 15px 35px rgba(128,0,0,0.2);">
+    <div class="md:col-span-2 flex justify-center" data-aos="flip-left" data-aos-duration="1000">
+      <div class="w-full max-w-xs aspect-square rounded-3xl card-hover flex items-center justify-center text-7xl icon-box">
         🌺
       </div>
     </div>
 
-    <div class="md:col-span-3" data-aos="fade-up">
-      <h2 class="text-3xl md:text-4xl font-bold" style="color:var(--maroon)">🌺 বাৎসরিক মহোৎসব</h2>
-      <div class="w-20 h-[4px] my-4 rounded-full" style="background:var(--saffron)"></div>
-      <p class="text-lg md:text-xl leading-[2] font-normal" style="color:var(--charcoal)">
-        প্রতি বছর <strong style="color:var(--saffron)">১৫ই জ্যৈষ্ঠ</strong> এই মন্দিরে পরম শ্রদ্ধা ও আনন্দের সাথে বাৎসরিক উৎসব আয়োজিত হয়। এই পুণ্য তিথিতে হাজার হাজার ভক্তের সমাগমে মন্দির প্রাঙ্গণ মুখরিত হয়ে ওঠে এবং বিশেষ মহাপ্রসাদ বিতরণ করা হয়।
+    <div class="md:col-span-3" data-aos="fade-left" data-aos-duration="800">
+      <h2 class="text-3xl md:text-4xl font-bold text-maroon">🌺 বাৎসরিক মহোৎসব</h2>
+      <div class="w-20 h-[4px] my-4 rounded-full bg-saffron"></div>
+      <p class="text-lg md:text-xl leading-[2] font-normal text-charcoal">
+        প্রতি বছর <strong class="text-saffron">১৫ই জ্যৈষ্ঠ</strong> এই মন্দিরে পরম শ্রদ্ধা ও আনন্দের সাথে বাৎসরিক উৎসব আয়োজিত হয়। এই পুণ্য তিথিতে হাজার হাজার ভক্তের সমাগমে মন্দির প্রাঙ্গণ মুখরিত হয়ে ওঠে এবং বিশেষ মহাপ্রসাদ বিতরণ করা হয়।
       </p>
     </div>
   </div>
 </section>
 
-<!-- ===================== SCHEDULE ===================== -->
+<!-- SCHEDULE -->
 <section id="schedule" class="py-20 px-5">
   <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
-    <h2 class="text-3xl md:text-4xl font-bold" style="color:var(--maroon)">⏰ নিত্য পূজা ও সেবা সময়সূচী</h2>
-    <div class="divider mt-4 mb-10"><span class="line"></span><span style="color:var(--gold)">✦</span><span class="line"></span></div>
+    <h2 class="text-3xl md:text-4xl font-bold text-maroon">⏰ নিত্য পূজা ও সেবা সময়সূচী</h2>
+    <div class="divider mt-4 mb-10"><span class="line"></span><span class="text-gold">✦</span><span class="line"></span></div>
   </div>
 
-  <div class="max-w-3xl mx-auto rounded-3xl overflow-hidden shadow-xl" style="background:#fff; border:1.5px solid rgba(212,175,55,0.4);" data-aos="fade-up" data-aos-delay="150">
-    <div class="schedule-row flex items-center justify-between px-7 py-6 border-b" style="border-color: rgba(212,175,55,0.2);">
+  <div class="max-w-3xl mx-auto rounded-3xl overflow-hidden shadow-xl schedule-box" data-aos="zoom-in-up" data-aos-delay="100">
+    <div class="schedule-row flex items-center justify-between px-7 py-6 border-b border-gold-light">
       <div class="flex items-center gap-4">
         <span class="text-2xl">🚪</span>
-        <span class="font-semibold text-lg" style="color:var(--charcoal)">মন্দির দ্বার উন্মোচন</span>
+        <span class="font-semibold text-lg text-charcoal">মন্দির দ্বার উন্মোচন</span>
       </div>
-      <span class="font-bold text-lg md:text-xl" style="color:var(--saffron)">সকাল ০৬:০০ টা</span>
+      <span class="font-bold text-lg md:text-xl text-saffron">সকাল ০৬:০০ টা</span>
     </div>
 
-    <div class="schedule-row flex items-center justify-between px-7 py-6 border-b" style="border-color: rgba(212,175,55,0.2);">
+    <div class="schedule-row flex items-center justify-between px-7 py-6 border-b border-gold-light">
       <div class="flex items-center gap-4">
         <span class="text-2xl">🪔</span>
-        <span class="font-semibold text-lg" style="color:var(--charcoal)">নিত্য পূজা ও আরতি</span>
+        <span class="font-semibold text-lg text-charcoal">নিত্য পূজা ও আরতি</span>
       </div>
-      <span class="font-bold text-lg md:text-xl" style="color:var(--saffron)">সকাল ০৮:৩০ টা</span>
+      <span class="font-bold text-lg md:text-xl text-saffron">সকাল ০৮:৩০ টা</span>
     </div>
 
     <div class="schedule-row flex items-center justify-between px-7 py-6">
       <div class="flex items-center gap-4">
         <span class="text-2xl">🌙</span>
-        <span class="font-semibold text-lg" style="color:var(--charcoal)">সন্ধ্যা আরতি ও প্রার্থনা</span>
+        <span class="font-semibold text-lg text-charcoal">সন্ধ্যা আরতি ও প্রার্থনা</span>
       </div>
-      <span class="font-bold text-lg md:text-xl" style="color:var(--saffron)">সন্ধ্যা ০৬:৩০ টা</span>
+      <span class="font-bold text-lg md:text-xl text-saffron">সন্ধ্যা ০৬:৩০ টা</span>
     </div>
   </div>
 </section>
 
-<!-- ===================== GALLERY ===================== -->
-<section id="gallery" class="py-20 px-5" style="background: linear-gradient(180deg, transparent, rgba(212,175,55,0.08));">
+<!-- GALLERY -->
+<section id="gallery" class="py-20 px-5 bg-gallery-gradient">
   <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
-    <h2 class="text-3xl md:text-4xl font-bold" style="color:var(--maroon)">📸 মন্দির প্রাঙ্গণ</h2>
-    <div class="divider mt-4 mb-10"><span class="line"></span><span style="color:var(--gold)">✦</span><span class="line"></span></div>
+    <h2 class="text-3xl md:text-4xl font-bold text-maroon">📸 মন্দির প্রাঙ্গণ</h2>
+    <div class="divider mt-4 mb-10"><span class="line"></span><span class="text-gold">✦</span><span class="line"></span></div>
   </div>
 
   <div class="max-w-5xl mx-auto grid sm:grid-cols-2 gap-8">
-    <div class="gallery-item aspect-[4/3] img-fallback shadow-lg" data-aos="fade-up" onclick="openLightbox('photo1.jpg')">
+    <div class="gallery-item aspect-[4/3] shadow-lg" data-aos="fade-right" onclick="openLightbox('photo1.jpg')">
       <img src="photo1.jpg" alt="মন্দিরের প্রাঙ্গণ - ছবি ১" class="w-full h-full object-cover" loading="lazy">
     </div>
-    <div class="gallery-item aspect-[4/3] img-fallback shadow-lg" data-aos="fade-up" data-aos-delay="150" onclick="openLightbox('photo2.jpg')">
+    <div class="gallery-item aspect-[4/3] shadow-lg" data-aos="fade-left" data-aos-delay="150" onclick="openLightbox('photo2.jpg')">
       <img src="photo2.jpg" alt="মন্দিরের প্রাঙ্গণ - ছবি ২" class="w-full h-full object-cover" loading="lazy">
     </div>
   </div>
 </section>
 
-<!-- ===================== LOCATION & DONATION ===================== -->
+<!-- LOCATION -->
 <section id="location" class="py-20 px-5">
-  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10">
-
-    <div class="rounded-3xl overflow-hidden shadow-xl card-hover" style="border:1.5px solid rgba(212,175,55,0.4);" data-aos="fade-right">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d285.2097657994925!2d88.69968963269426!3d22.82097983733553!2m3!1f0!2f0!3f0!2m3!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1786001811547!5m2!1sen!2sin"
-        width="100%" height="100%" style="border:0; min-height: 380px;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade" title="মন্দিরের অবস্থান - গুগল ম্যাপ">
-      </iframe>
+  <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+    <div class="p-8 rounded-3xl card-hover address-card" data-aos="fade-up">
+      <h3 class="text-2xl font-bold flex items-center gap-2 text-maroon">📍 ঠিকানা</h3>
+      <p class="mt-4 leading-[1.9] font-normal text-base md:text-lg text-charcoal">
+        গ্রাম: টুনিঘাটা (উত্তরপাড়া), পোস্ট: কুমড়া কাশিপুর, থানা: হাবড়া,<br>
+        উত্তর ২৪ পরগণা, পিন: ৭৪৩২৭১
+      </p>
     </div>
 
-    <div class="flex flex-col gap-8" data-aos="fade-left">
-      <div class="p-8 rounded-3xl card-hover" style="background:#fff; border:1.5px solid rgba(212,175,55,0.4); box-shadow:0 10px 30px rgba(128,0,0,0.05);">
-        <h3 class="text-2xl font-bold flex items-center gap-2" style="color:var(--maroon)">📍 ঠিকানা</h3>
-        <p class="mt-4 leading-[1.9] font-normal text-base md:text-lg" style="color:var(--charcoal)">
-          গ্রাম: টুনিঘাটা (উত্তরপাড়া), পোস্ট: কুমড়া কাশিপুর, থানা: হাবড়া,<br>
-          উত্তর ২৪ পরগণা, পিন: ৭৪৩২৭১
-        </p>
-      </div>
-
-      <div class="p-8 rounded-3xl card-hover text-white" style="background: linear-gradient(135deg, var(--maroon), var(--maroon-deep)); box-shadow:0 15px 35px rgba(128,0,0,0.2);">
-        <h3 class="text-2xl font-bold flex items-center gap-2" style="color:var(--gold)">💸 প্রণামী / সেবা দান</h3>
-        <p class="mt-4 leading-[1.9] font-normal text-base md:text-lg text-amber-50">
-          মন্দিরের উন্নয়ন ও বাৎসরিক উৎসবের সেবায় আপনার সাধ্যমতো প্রণামী পাঠাতে মন্দিরে সরাসরি যোগাযোগ করুন।
-        </p>
-      </div>
+    <div class="p-8 rounded-3xl card-hover text-white donate-card" data-aos="fade-up" data-aos-delay="150">
+      <h3 class="text-2xl font-bold flex items-center gap-2 text-gold">💸 প্রণামী / সেবা দান</h3>
+      <p class="mt-4 leading-[1.9] font-normal text-base md:text-lg text-amber-50">
+        মন্দিরের উন্নয়ন ও বাৎসরিক উৎসবের সেবায় আপনার সাধ্যমতো প্রণামী পাঠাতে মন্দিরে সরাসরি যোগাযোগ করুন।
+      </p>
     </div>
   </div>
 </section>
 
-<!-- ===================== FOOTER ===================== -->
-<footer class="relative py-10 px-5 text-center overflow-hidden" style="background: var(--maroon-deep);">
-  <svg class="mandala" style="right:-60px; top:-60px; width:220px; height:220px;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="50" cy="50" r="45" stroke="#D4AF37" stroke-width="0.6"/>
-    <circle cx="50" cy="50" r="35" stroke="#D4AF37" stroke-width="0.6"/>
-    <circle cx="50" cy="50" r="25" stroke="#D4AF37" stroke-width="0.6"/>
-    <path d="M50 5 L50 95 M5 50 L95 50 M15 15 L85 85 M15 85 L85 15" stroke="#D4AF37" stroke-width="0.4"/>
-  </svg>
+<!-- FOOTER -->
+<footer class="relative py-10 px-5 text-center overflow-hidden footer-bg">
   <p class="text-amber-100 text-sm font-medium relative z-10">© মহামানব গণেশ পাগল মন্দির। সর্বস্বত্ব সংরক্ষিত।</p>
 </footer>
 
-<!-- ===================== LIGHTBOX ===================== -->
-<div id="lightbox" role="dialog" aria-modal="true" aria-label="ছবি পূর্ণপর্দায় দেখুন">
-  <button id="lightboxClose" aria-label="বন্ধ করুন"
-    class="absolute top-6 right-6 text-white text-4xl leading-none w-11 h-11 flex items-center justify-center rounded-full transition-colors hover:bg-white/10">
-    &times;
-  </button>
+<!-- LIGHTBOX -->
+<div id="lightbox" role="dialog" aria-label="ছবি পূর্ণপর্দায় দেখুন" aria-modal="true">
+  <button id="lightboxClose" class="absolute top-6 right-6 text-white text-4xl leading-none w-11 h-11 flex items-center justify-center rounded-full transition-colors hover:bg-white/10" aria-label="বন্ধ করুন">&times;</button>
   <img id="lightboxImg" src="" alt="মন্দিরের ছবি - পূর্ণপর্দা">
 </div>
 
-<!-- ===================== SCRIPTS ===================== -->
+<!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
-
-  // Navbar scroll shadow
-  const nav = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 20);
-  });
-
-  // Mobile menu toggle
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-  document.querySelectorAll('.menu-link').forEach(link => {
-    link.addEventListener('click', () => mobileMenu.classList.remove('open'));
-  });
-
-  // Lightbox
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightboxImg');
-
-  function openLightbox(src) {
-    lightboxImg.src = src;
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLightbox() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
